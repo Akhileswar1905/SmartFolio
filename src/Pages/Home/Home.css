@@ -1,17 +1,17 @@
 .home {
+  height: 100vh;
   background-image: url("https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fHByb2dyYW1tZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
 }
 
 .info {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(12px);
-  height: 100%;
 }
 
 .title {
@@ -36,7 +36,7 @@
 }
 
 .more-info > .span {
-  color: green;
+  color: #c96a36;
 }
 
 .link {
@@ -63,4 +63,16 @@
   color: white;
   font-size: 28px;
   cursor: pointer;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 360px) {
+  .more-info {
+    margin: 10px;
+    font-size: 40px;
+  }
+  .icons {
+    margin: 10px;
+  }
 }
