@@ -1,0 +1,52 @@
+.signup {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../Login/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid white;
+}
+
+.signupForm > label {
+  margin: 10px 0px;
+}
+
+.signupForm > input {
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #eee;
+  background-color: transparent;
+  color: white;
+}
+
+.formInput:focus {
+  outline: none;
+}
+
+.signupBtn {
+  margin: 20px 0px;
+  background-color: teal;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.signup > h1 {
+  font-family: "Poppins", sans-serif;
+}

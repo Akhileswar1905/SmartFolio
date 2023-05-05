@@ -1,0 +1,53 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("./background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid white;
+}
+
+.loginForm > label {
+  margin: 10px 0px;
+}
+
+.loginForm > input {
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #eee;
+  background-color: transparent;
+  color: white;
+}
+
+.formInput:focus {
+  outline: none;
+}
+
+.loginBtn {
+  margin: 20px 0px;
+  background-color: teal;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.login > h1 {
+  font-family: "Poppins", sans-serif;
+}
