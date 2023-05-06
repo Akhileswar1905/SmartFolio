@@ -1,13 +1,50 @@
+import { useState } from "react";
 import "./SignUp.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
+  // FormData
+  const [form, setForm] = useState({});
+
+  // UseNavigate
+  const navigate = useNavigate();
+  // Handle Change Function
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Submitting Form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        "http://localhost:3001/api/users/register",
+        form
+      );
+      if (res.data === "User Already Registered") {
+        console.log("User Already Registered From Client");
+        navigate("/login");
+      } else {
+        console.log(res.data);
+      }
+      console.log(res);
+    } catch (error) {
+      console.log(error.message);
+    }
+    navigate("/details");
+  };
+
   return (
     <div className="signup">
       <h1>Register</h1>
-      <form className="signupForm">
+      <form className="signupForm" onSubmit={handleSubmit}>
         <label>User Name</label>
         <input
+          onChange={handleChange}
           required
           name="username"
           type="text"
@@ -16,6 +53,7 @@ const SignUp = () => {
         />
         <label>Email</label>
         <input
+          onChange={handleChange}
           required
           type="email"
           name="email"
@@ -24,6 +62,7 @@ const SignUp = () => {
         />
         <label>Password</label>
         <input
+          onChange={handleChange}
           required
           type="password"
           name="password"

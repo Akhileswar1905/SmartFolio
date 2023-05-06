@@ -1,14 +1,48 @@
 import { NavLink } from "react-router-dom";
 import "./Login.css";
+import { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
+  // Form Data
+  const [form, setForm] = useState({});
+
+  // Error Handling
+  const [err, setErr] = useState("none");
+
+  // Handle Change Function
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Submitting Form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        "http://localhost:3001/api/users/login",
+        form
+      );
+      if (res.data.length) {
+        console.log(res.data);
+      } else {
+        setErr("block");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className="login">
       <div className="log">
         <h1>Login</h1>
-        <form className="loginForm">
+        <form className="loginForm" onSubmit={handleSubmit}>
           <label>Email</label>
           <input
+            onChange={handleChange}
             name="email"
             required
             type="email"
@@ -17,13 +51,14 @@ const Login = () => {
           />
           <label>Password</label>
           <input
+            onChange={handleChange}
             name="password"
             required
             type="password"
             placeholder="Enter Your Password..."
             className="formInput"
           />
-          <p className="err" style={{ display: "none" }}>
+          <p className="err" style={{ display: err }}>
             Wrong Credientials
           </p>
           <button className="loginBtn">Login</button>

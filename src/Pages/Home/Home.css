@@ -15,16 +15,17 @@
 }
 
 .title {
-  margin: 50px;
+  margin: 45px;
   font-size: 39px;
   color: white;
   font-family: "Josefin Sans", sans-serif;
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 .title > img {
   width: 45px;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 .more-info {

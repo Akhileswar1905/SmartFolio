@@ -1,0 +1,105 @@
+.details {
+  display: flex;
+  color: white;
+  background-image: url("../Login/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 23px;
+}
+
+.detailsWrapper {
+  flex: 9;
+}
+
+.detailsTitle {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.detailsTitle > h1 {
+  color: gray;
+}
+
+.detailsDel {
+  color: red;
+  cursor: pointer;
+}
+
+.detailsPP {
+  display: flex;
+  align-items: center;
+}
+
+.detailsPP > img {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+}
+
+.userIcon {
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.detailsForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsForm > label {
+  font-size: 18px;
+  margin: 10px 0px;
+}
+
+.detailsInput {
+  width: 75%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: transparent;
+  color: white;
+}
+
+.detailsForm > textarea {
+  width: 75%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.detailsInput:focus {
+  outline: none;
+}
+
+.opt {
+  display: flex;
+  gap: 7px;
+}
+
+.detailsSubmit {
+  padding: 10px;
+  color: white;
+  background-color: teal;
+  border: none;
+  border-radius: 12px;
+  margin: 10px 0;
+  align-self: center;
+  cursor: pointer;
+}
+
+.form {
+  margin: 30px;
+}
+
+.heading {
+  color: white;
+  margin: 12px 0px;
+  border-bottom: 1px solid white;
+  width: 12vw;
+}
