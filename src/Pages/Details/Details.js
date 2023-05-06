@@ -82,6 +82,15 @@ const Details = () => {
             <div className="socialHandles">
               <h2 className="heading">Social Media</h2>
               <div className="detailsForm">
+                <label className="detailsLabel">LinkedIn</label>
+                <input
+                  type="text"
+                  onChange={handleForm}
+                  name="social"
+                  className="detailsInput"
+                />
+              </div>
+              <div className="detailsForm">
                 <label className="detailsLabel">GitHub</label>
                 <input
                   type="text"
