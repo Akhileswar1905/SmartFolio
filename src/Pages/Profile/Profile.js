@@ -3,9 +3,12 @@ import "./Profile.css";
 import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import NavBar from "../../NavBar/NavBar";
-
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { storage } from "../../Firebase/Firebase";
 const Profile = () => {
   const [user, setUser] = useState({});
+  const [file, setFile] = useState(null);
+  const [form, setForm] = useState({});
 
   // Fetching user
   const id = localStorage.getItem("token");
@@ -41,6 +44,73 @@ const Profile = () => {
     }
   }
 
+  const handleProfile = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.files[0] });
+    setFile(e.target.files[0]);
+    console.log(file);
+  };
+
+  // uploading pp
+  const img = document.querySelector(".img");
+  useEffect(() => {
+    const uploadFile = () => {
+      const filename = new Date().getTime() + file.name; //setting filename
+      console.log(filename);
+      const storageRef = ref(storage, filename);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+      // Progress
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+            default:
+              break;
+          }
+        },
+        (err) => {
+          console.log(err);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            console.log("File available at", downloadURL);
+            setForm((prev) => ({ ...prev, profilePic: downloadURL }));
+            img.src = downloadURL;
+          });
+        }
+      );
+    };
+    file && uploadFile();
+  }, [file, img]);
+
+  // Updating the profile picture
+  const handleSubmit = () => {
+    console.log(form);
+    setForm({
+      ...form,
+      profilePic: img.src,
+    });
+
+    console.log(form.profilePic);
+    if (form.profilePic === img.src) {
+      submit();
+    }
+  };
+
+  const submit = async () => {
+    const res = await axios.put(`http://localhost:3001/api/users/${id}`, form);
+    document.querySelector(".btn").style.display = "none";
+    console.log(res.data);
+  };
+
   return (
     <>
       <NavBar />
@@ -48,14 +118,26 @@ const Profile = () => {
         {console.log(user)}
         <div className="pic section1">
           <div className="pp">
-            <img src={user.profilePic} alt="" />
-            <label className="edit" htmlFor="file">
+            <img
+              src={user.profilePic}
+              name="profilePic"
+              className="img"
+              alt=""
+            />
+            <label
+              className="edit"
+              htmlFor="file"
+              onClick={() => {
+                document.querySelector(".btn").style.display = "block";
+              }}
+            >
               <FaEdit />
               Edit
             </label>
             <input
               id="file"
               type="file"
+              onChange={handleProfile}
               accept="jpg png svg"
               style={{ display: "none" }}
             />
@@ -76,6 +158,9 @@ const Profile = () => {
                 ))
               : "Loading..."}
           </div>
+          <button className="btn" onClick={handleSubmit}>
+            Update
+          </button>
         </div>
         <div className="data section2">
           <h1 className="heading">Your Profile</h1>
@@ -99,6 +184,16 @@ const Profile = () => {
               <input type="text" value={user.email} readOnly />
             </div>
           </div>
+
+          <div className="desc">
+            <label className="underline">About Me:</label>
+            <textarea
+              className="textarea"
+              value={user.Desc}
+              readOnly
+            ></textarea>
+          </div>
+
           <div className="skillsBox ">
             <h2 className="heading">Skills</h2>
 

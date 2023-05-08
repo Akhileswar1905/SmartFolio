@@ -48,6 +48,17 @@
   margin-right: 3px;
 }
 
+.btn {
+  background-color: teal;
+  border-radius: 90px;
+  padding: 5px;
+  color: white;
+  width: 12vw;
+  margin: 23px 0px;
+  align-self: center;
+  display: none;
+}
+
 .section2 {
   width: 70%;
   padding: 13px;
@@ -86,6 +97,16 @@
 }
 .underline {
   border-bottom: 2px solid white;
+}
+
+.textarea {
+  background-color: transparent;
+  padding: 5px;
+  width: 100%;
+  height: 20vh;
+  color: white;
+  border: none;
+  border-bottom: 1px solid teal;
 }
 
 /* Media Query */
