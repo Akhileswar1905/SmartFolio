@@ -7,8 +7,8 @@ import logo from "./logo.png";
 function NavBar() {
   return (
     <Navbar
-      collapseOnSelect
       className="nav"
+      collapseOnSelect
       expand="lg"
       bg="dark"
       variant="dark"
@@ -32,6 +32,11 @@ function NavBar() {
             <Nav.Link>
               <NavLink to="/profile" className={"templates"}>
                 Profile
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/about" className={"templates"}>
+                About Us
               </NavLink>
             </Nav.Link>
           </Nav>

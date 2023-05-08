@@ -1,7 +1,3 @@
-.nav {
-  display: flex;
-  align-content: center;
-}
 .brand > .logo {
   width: 45px;
   margin-right: 3px;
@@ -21,7 +17,13 @@
   align-items: center;
   justify-content: center;
 }
-
+.nav {
+  background-color: transparent !important;
+  backdrop-filter: blur(20px);
+  color: white;
+  margin: 0;
+  padding: 8px;
+}
 .nav > .link:hover {
   color: white;
 }
