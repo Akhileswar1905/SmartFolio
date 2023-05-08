@@ -155,15 +155,16 @@
   .pp > p {
     font-size: 0.8em;
   }
+  .underline {
+    font-size: 0.8em;
+  }
 }
 
 @media screen and (max-width: 340px) {
   .pp > .edit {
     font-size: 0.6em;
   }
-  .underline {
-    font-size: 0.8em;
-  }
+
   .label {
     width: 70vw;
   }
