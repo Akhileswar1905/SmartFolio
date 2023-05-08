@@ -15,7 +15,7 @@
 }
 
 .title {
-  margin: 45px;
+  margin: 35px;
   font-size: 39px;
   color: white;
   font-family: "Josefin Sans", sans-serif;
@@ -24,7 +24,7 @@
 }
 .title > img {
   width: 45px;
-  margin-bottom: 5px;
+  margin-bottom: 22px;
   margin-right: 5px;
 }
 
@@ -36,7 +36,11 @@
   margin-top: 80px;
 }
 
-.more-info > .span {
+.more-info > p {
+  margin-bottom: 0px;
+}
+
+.more-info > .homespan {
   color: #c96a36;
 }
 
@@ -45,9 +49,13 @@
   color: white;
 }
 
+.link:hover {
+  color: white;
+}
+
 .more-info > button {
   background-color: #359e88;
-  padding: 15px;
+  padding: 10px;
   border-radius: 90px;
   border: none;
   color: white;

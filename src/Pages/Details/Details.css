@@ -100,6 +100,12 @@
 .heading {
   color: white;
   margin: 12px 0px;
-  border-bottom: 1px solid white;
-  width: 12vw;
+  border-bottom: 2px solid white;
+  width: 15vw;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }

@@ -12,7 +12,7 @@ const Home = () => {
         </div>
         <div className="more-info">
           <p>Elevate your online</p> <p>presence with a professional</p>
-          <p className="span">portfolio</p>
+          <p className="homespan">portfolio</p>
           {/* <span>"Your story, your portfolio, your way"</span> */}
           <button className="auth">
             <NavLink to="/signup" className={"link"}>

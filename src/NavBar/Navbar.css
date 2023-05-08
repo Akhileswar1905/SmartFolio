@@ -1,0 +1,35 @@
+.nav {
+  display: flex;
+  align-content: center;
+}
+.brand > .logo {
+  width: 45px;
+  margin-right: 3px;
+}
+
+.link {
+  text-decoration: none;
+}
+.brand > .head {
+  margin-top: 12px;
+  font-size: 34px;
+  color: white;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav > .link:hover {
+  color: white;
+}
+
+.templates {
+  color: white;
+  text-decoration: none;
+}
+.templates:hover {
+  color: whitesmoke;
+}
