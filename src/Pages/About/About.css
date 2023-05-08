@@ -24,6 +24,7 @@
 .header {
   margin: 12px 0px;
   border-bottom: 2px solid white;
+  font-family: "Righteous", cursive;
 }
 
 .head {
@@ -32,6 +33,8 @@
 
 .moreinfo > p {
   font-size: 1.5em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100 !important;
 }
 
 .moreinfo {
