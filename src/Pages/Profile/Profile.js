@@ -166,7 +166,7 @@ const Profile = () => {
                 ))
               : "Loading..."}
           </div>
-          <button className="btn" onClick={handleSubmit}>
+          <button className="mediaLink btn" onClick={handleSubmit}>
             Update
           </button>
         </div>
