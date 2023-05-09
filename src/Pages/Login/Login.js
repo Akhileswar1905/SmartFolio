@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
@@ -9,6 +9,9 @@ const Login = () => {
 
   // Error Handling
   const [err, setErr] = useState("none");
+
+  // useNavigate
+  const navigate = useNavigate();
 
   // Handle Change Function
   const handleChange = (e) => {
@@ -23,11 +26,14 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3001/api/users/login",
+        "https://smartfolio.onrender.com/api/users/login",
         form
       );
       if (res.data.length) {
         console.log(res.data);
+        localStorage.setItem("token", res.data[0]._id);
+        navigate("/profile");
+        window.location.reload();
       } else {
         setErr("block");
       }

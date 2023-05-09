@@ -1,7 +1,7 @@
 .profile {
   color: white;
   display: flex;
-  background-image: url("https://i.pinimg.com/564x/81/1a/ba/811abaf3120807844c7572e87dd4440d.jpg");
+  background-image: url("./background.png");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -37,15 +37,20 @@
   align-items: center;
   justify-content: center;
 }
-.mediaLinks > .mediaLink {
+.mediaLink {
   width: 18vw;
   background-color: dodgerblue;
   padding: 5px;
+  border: none;
   border-radius: 90px;
   text-align: center;
   color: white;
   text-decoration: none;
   margin: 7px 0px;
+}
+
+.logout {
+  background-color: red;
 }
 
 .edit {

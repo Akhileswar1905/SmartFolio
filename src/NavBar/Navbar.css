@@ -18,11 +18,11 @@
   justify-content: center;
 }
 .nav {
-  background-color: transparent !important;
-  backdrop-filter: blur(20px);
+  /* background-color: transparent !important; */
+  /* backdrop-filter: blur(20px); */
   color: white;
   margin: 0;
-  padding: 8px;
+  /* padding: 8px; */
 }
 .nav > .link:hover {
   color: white;

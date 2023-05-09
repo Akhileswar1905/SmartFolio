@@ -22,7 +22,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3001/api/users/register",
+        "https://smartfolio.onrender.com/api/users/register",
         form
       );
       if (res.data === "User Already Registered") {
@@ -32,6 +32,7 @@ const SignUp = () => {
         console.log(res.data);
       }
       console.log(res);
+      localStorage.setItem("token", res.data._id);
     } catch (error) {
       console.log(error.message);
     }

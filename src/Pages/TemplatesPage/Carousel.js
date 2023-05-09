@@ -1,19 +1,25 @@
-import Carousel from 'react-bootstrap/Carousel';
+import "./Templates.css";
+import Carousel from "react-bootstrap/Carousel";
 
-function IndividualIntervalsExample() {
+function Slides(props) {
+  const template = props.template;
   return (
     <Carousel>
-      <Carousel.Item interval={1000}>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
-          alt="First slide"
-        />
-        
-      </Carousel.Item>
-      
+      {template.img
+        ? template.img.map((image, index) => (
+            <Carousel.Item key={index}>
+              <div className="item">
+                <img
+                  className="d-block w-100 template"
+                  src={image}
+                  alt="slide"
+                />
+              </div>
+            </Carousel.Item>
+          ))
+        : "Loading..."}
     </Carousel>
   );
 }
 
-export default IndividualIntervalsExample;
+export default Slides;

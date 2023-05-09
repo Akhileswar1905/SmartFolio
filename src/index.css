@@ -15,4 +15,9 @@ html::-webkit-scrollbar-track {
 
 body {
   background-color: #2a292b;
+  background-image: url("../src/Pages/Login/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
 }

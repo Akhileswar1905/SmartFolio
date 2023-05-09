@@ -5,11 +5,14 @@ import { FaEdit } from "react-icons/fa";
 import NavBar from "../../NavBar/NavBar";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from "../../Firebase/Firebase";
+import { useNavigate } from "react-router-dom";
 const Profile = () => {
   const [user, setUser] = useState({});
   const [file, setFile] = useState(null);
   const [form, setForm] = useState({});
 
+  // Use Navigate
+  const navigate = useNavigate();
   // Fetching user
   const id = localStorage.getItem("token");
 
@@ -17,7 +20,9 @@ const Profile = () => {
     const fetchUser = async () => {
       console.log(id);
       try {
-        const res = await axios.get(`http://localhost:3001/api/users/${id}`);
+        const res = await axios.get(
+          `https://smartfolio.onrender.com/api/users/${id}`
+        );
         console.log("res: " + res.data);
         setUser(res.data);
       } catch (error) {
@@ -106,7 +111,10 @@ const Profile = () => {
   };
 
   const submit = async () => {
-    const res = await axios.put(`http://localhost:3001/api/users/${id}`, form);
+    const res = await axios.put(
+      `https://smartfolio.onrender.com/api/users/${id}`,
+      form
+    );
     document.querySelector(".btn").style.display = "none";
     console.log(res.data);
   };
@@ -203,6 +211,16 @@ const Profile = () => {
                 : "Loading..."}
             </ul>
           </div>
+          <button
+            className="mediaLink logout"
+            onClick={() => {
+              localStorage.clear();
+              navigate("/");
+              window.location.reload();
+            }}
+          >
+            Logout
+          </button>
         </div>
       </div>
     </>

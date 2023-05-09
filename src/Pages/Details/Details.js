@@ -103,7 +103,10 @@ const Details = () => {
 
   const submitData = async () => {
     console.log(form);
-    const res = await axios.put(`http://localhost:3001/api/users/${id}`, form);
+    const res = await axios.put(
+      `https://smartfolio.onrender.com/api/users/${id}`,
+      form
+    );
     console.log("res:", res.data);
     setUser(res.data);
     navigate("/profile");
