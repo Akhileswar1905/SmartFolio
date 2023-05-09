@@ -155,18 +155,40 @@
   }
 }
 @media screen and (max-width: 570px) {
+  .profile {
+    display: block;
+  }
+  .section1,
+  .section2 {
+    width: 100%;
+  }
   .mediaLink {
     width: 25vw;
     font-size: 0.47em;
   }
   .pp > img {
-    width: 120%;
+    width: 100%;
   }
   .pp > p {
-    font-size: 0.8em;
+    font-size: 1em;
   }
   .underline {
     font-size: 0.8em;
+  }
+
+  .mediaLinks {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .section2 {
+    font-size: 0.8em;
+  }
+  input,
+  .box {
+    width: 100%;
   }
 }
 
