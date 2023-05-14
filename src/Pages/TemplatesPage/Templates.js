@@ -29,6 +29,12 @@ const Templates = () => {
               <div className="template-item" key={index}>
                 <Slides template={template} />
                 <h2>{template.Title}</h2>
+                <div className="btns">
+                  <a href={template.url} target="_blank" rel="noreferrer">
+                    <button className="mediaLink">Preview</button>
+                  </a>
+                  <button className="mediaLink">Use It</button>
+                </div>
               </div>
             ))
           : "Loading templates..."}

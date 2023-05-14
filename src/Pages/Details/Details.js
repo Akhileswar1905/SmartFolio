@@ -259,7 +259,7 @@ const Details = () => {
                   onChange={handleForm}
                   name="skill"
                   className="detailsInput"
-                  placeholder={`Enter Your Skill `}
+                  placeholder={`Enter Your Skill (Eg: Web Developer, App Developer, Machine Learning Engineer)`}
                 />
                 <FaPlus className="userIcon" onClick={handleSkill} />
               </div>

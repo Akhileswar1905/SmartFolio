@@ -25,17 +25,17 @@ function NavBar() {
           <Nav className="me-auto"></Nav>
           <Nav>
             <Nav.Link>
-              <NavLink to="/" className={"templates"}>
+              <NavLink to="/" className={"navlink"}>
                 Templates
               </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <NavLink to="/profile" className={"templates"}>
+              <NavLink to="/profile" className={"navlink"}>
                 Profile
               </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <NavLink to="/about" className={"templates"}>
+              <NavLink to="/about" className={"navlink"}>
                 About Us
               </NavLink>
             </Nav.Link>

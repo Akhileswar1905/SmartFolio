@@ -3,9 +3,29 @@
   margin-right: 3px;
 }
 
-.link {
+.navlink {
+  color: white;
   text-decoration: none;
 }
+.navlink:hover {
+  color: white;
+}
+.navlink::after {
+  content: "";
+  height: 2.5px;
+  width: 0%;
+  display: block;
+  background-color: white;
+  transition: 0.5s ease-in-out;
+}
+
+.navlink:hover::after {
+  content: "";
+  width: 75%;
+  height: 2.5px;
+  background-color: white;
+}
+
 .brand > .head {
   margin-top: 12px;
   font-size: 34px;
@@ -19,19 +39,12 @@
 }
 .nav {
   /* background-color: transparent !important; */
-  /* backdrop-filter: blur(20px); */
+  backdrop-filter: blur(10px);
   color: white;
   margin: 0;
-  /* padding: 8px; */
-}
-.nav > .link:hover {
-  color: white;
 }
 
 .templates {
   color: white;
   text-decoration: none;
-}
-.templates:hover {
-  color: whitesmoke;
 }
