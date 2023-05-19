@@ -7,6 +7,7 @@ import Profile from "./Pages/Profile/Profile";
 import Details from "./Pages/Details/Details";
 import Templates from "./Pages/TemplatesPage/Templates";
 import About from "./Pages/About/About";
+import Required from "./Pages/Required/Required";
 
 const id = localStorage.getItem("token");
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={id ? <Profile /> : <SignUp />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/required" element={<Required />} />
       </Routes>
     </>
   );

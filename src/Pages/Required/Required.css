@@ -1,0 +1,19 @@
+.req {
+  display: flex;
+  flex-direction: column;
+}
+
+.req > .heading {
+  width: 100%;
+}
+
+.folio-imgs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.folio-imgs > .heading {
+  width: 100%;
+}

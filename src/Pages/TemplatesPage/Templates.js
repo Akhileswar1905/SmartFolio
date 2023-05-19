@@ -3,6 +3,7 @@ import NavBar from "../../NavBar/NavBar";
 import Slides from "./Carousel";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 const Templates = () => {
   const [templates, setTemplates] = useState([]);
 
@@ -33,7 +34,9 @@ const Templates = () => {
                   <a href={template.url} target="_blank" rel="noreferrer">
                     <button className="mediaLink">Preview</button>
                   </a>
-                  <button className="mediaLink">Use It</button>
+                  <NavLink className="mediaLink" to={"/required"}>
+                    Use It
+                  </NavLink>
                 </div>
               </div>
             ))
