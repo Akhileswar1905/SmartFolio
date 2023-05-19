@@ -52,6 +52,9 @@
 .logout {
   background-color: red;
 }
+.logout:hover {
+  border: 2px solid red !important;
+}
 
 .edit {
   cursor: pointer;
