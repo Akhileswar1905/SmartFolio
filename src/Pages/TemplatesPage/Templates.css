@@ -32,6 +32,12 @@
   gap: 12px;
 }
 
+.mediaLink:hover {
+  color: white;
+  background-color: transparent;
+  border: 2px solid dodgerblue;
+}
+
 /* Media Queries */
 @media screen and (max-width: 768px) {
   .template {
