@@ -1,19 +1,35 @@
-.req {
+.required{
+  padding: 34px;
+  color: white;
   display: flex;
   flex-direction: column;
+  gap: 23px;
 }
 
-.req > .heading {
-  width: 100%;
+.required>.heading{
+  width: 45%;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-.folio-imgs {
-  width: 100%;
+.req-section{
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.req-box{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.req-block{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  gap: 50px;
 }
 
-.folio-imgs > .heading {
-  width: 100%;
+.req-block>input{
+  width: 20%;
 }
+
