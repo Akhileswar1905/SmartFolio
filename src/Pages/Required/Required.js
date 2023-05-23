@@ -1,76 +1,82 @@
 import { FaPlus } from "react-icons/fa";
-import './Required.css'
-import NavBar from '../../NavBar/NavBar'
-
-// handleAdd for EDU
-const handleAdd = () =>{
-const div = document.createElement("div")
-div.className = "req-block"
-const name = document.createElement("input")
-const range = document.createElement("input")
-name.className = 'detailsInput'
-range.className = 'detailsInput'
-name.setAttribute("placeholder","E.g: BTech in CS from ...")
-range.setAttribute("placeholder","E.g: 20xx - 20xx")
-
-div.appendChild(name)
-div.appendChild(range)
-const reqBox = document.querySelector(".edu-details")
-reqBox.appendChild(div)
-
-}
-
-
-// HandleAdd for EXP
-const handleAddExp = () =>{
-const div = document.createElement("div")
-div.className = "req-block"
-const name = document.createElement("input")
-const range = document.createElement("input")
-name.className = 'detailsInput'
-range.className = 'detailsInput'
-name.setAttribute("placeholder","E.g: Web Developer")
-range.setAttribute("placeholder","E.g: 20xx - 20xx")
-
-div.appendChild(name)
-div.appendChild(range)
-const reqBox = document.querySelector(".exp-details")
-reqBox.appendChild(div)
-
-}
+import "./Required.css";
+import NavBar from "../../NavBar/NavBar";
+import {
+  handleAdd,
+  handleAdd1,
+  handleAdd2,
+  handleAdd3,
+  handleChange,
+} from "../../Methods/requiredMethod.js";
 
 const Required = () => {
   return (
-    <><NavBar /><div className='required'>
-      <h2 className='heading'>Please Enter The Required Details</h2>
-      <div className="req-section">
-        <div className="req-box">
-          <label className='detailsLabel'>About Yourself</label>
-          <textarea className='detailsInput' placeholder='Hello Iam ....'></textarea>
-        </div>
-        <div className="edu-details">
-          <label className='detailsLabel'>Education Details</label>
-        <div className="req-box">
-          <div className="req-block">
-          <input className='detailsInput' placeholder='E.g: BTech in CS from ...'></input> 
-          <input className='detailsInput' placeholder='E.g: 20xx - 20xx'></input> 
-          <FaPlus className="userIcon" onClick={handleAdd} />
+    <>
+      <NavBar />
+      <div className="required">
+        <h2 className="heading">Please Enter The Required Details</h2>
+        <div className="req-section">
+          <div className="req-box">
+            <label className="detailsLabel reqLabel">
+              Name (For Portfolio)
+            </label>
+            <input
+              type="text"
+              className="detailsInput"
+              onChange={handleChange}
+              name="folioName"
+              placeholder="Enter Your Name"
+            ></input>
           </div>
-        </div>
-        </div>
-        <div className="exp-details">
-          <label className='detailsLabel'>Education Details</label>
-        <div className="req-box">
-          <div className="req-block">
-          <input className='detailsInput' placeholder='E.g: Web developer'></input> 
-          <input className='detailsInput' placeholder='E.g: 20xx - 20xx'></input> 
-          <FaPlus className="userIcon" onClick={handleAddExp} />
+          <div className="req-box">
+            <label className="detailsLabel reqLabel">About Yourself</label>
+            <textarea
+              className="detailsInput"
+              onChange={handleChange}
+              placeholder="Hello Iam ...."
+              name="folioDesc"
+            ></textarea>
           </div>
-        </div>
+          <div className="edu-details">
+            <label className="detailsLabel reqLabel">Education Details</label>
+            <div className="req-box">
+              <div className="req-block">
+                Add Education Details
+                <FaPlus className="userIcon edu" onClick={handleAdd} />
+              </div>
+            </div>
+          </div>
+          <div className="skills-details">
+            <label className="detailsLabel reqLabel">Enter Your Skillset</label>
+            <div className="req-box">
+              <div className="req-block">
+                Add Skill
+                <FaPlus className="userIcon edu" onClick={handleAdd3} />
+              </div>
+            </div>
+          </div>
+          <div className="exp-details">
+            <label className="detailsLabel reqLabel">Work Details</label>
+            <div className="req-box">
+              <div className="req-block">
+                Add Your Work Experience
+                <FaPlus className="userIcon exp" onClick={handleAdd1} />
+              </div>
+            </div>
+          </div>
+          <div className="project-details">
+            <label className="detailsLabel reqLabel">Your Projects</label>
+            <div className="req-box">
+              <div className="req-block">
+                Add Your Projects
+                <FaPlus className="userIcon exp" onClick={handleAdd2} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div></>
-  )
-}
+    </>
+  );
+};
 
-export default Required
+export default Required;

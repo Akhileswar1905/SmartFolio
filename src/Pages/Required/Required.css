@@ -1,4 +1,4 @@
-.required{
+.required {
   padding: 34px;
   color: white;
   display: flex;
@@ -6,30 +6,33 @@
   gap: 23px;
 }
 
-.required>.heading{
+.required > .heading {
   width: 45%;
   font-family: "Josefin Sans", sans-serif;
 }
 
-.req-section{
+.req-section {
   display: flex;
   flex-direction: column;
   gap: 27px;
 }
 
-.req-box{
+.req-box {
   display: flex;
   flex-direction: column;
-  gap: 25px;
 }
 
-.req-block{
+.req-block {
   display: flex;
   align-items: center;
   gap: 50px;
 }
 
-.req-block>input{
+.req-block > input {
   width: 20%;
 }
 
+.reqLabel {
+  font-size: 23px;
+  margin-bottom: 23px;
+}

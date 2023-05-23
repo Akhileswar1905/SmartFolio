@@ -3,9 +3,9 @@ import "./Profile.css";
 import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import NavBar from "../../NavBar/NavBar";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage } from "../../Firebase/Firebase";
+
 import { useNavigate } from "react-router-dom";
+import { uploadingImg } from "../../Methods/uploadingImg";
 const Profile = () => {
   const [user, setUser] = useState({});
   const [file, setFile] = useState(null);
@@ -58,42 +58,7 @@ const Profile = () => {
   // uploading pp
   const img = document.querySelector(".img");
   useEffect(() => {
-    const uploadFile = () => {
-      const filename = new Date().getTime() + file.name; //setting filename
-      console.log(filename);
-      const storageRef = ref(storage, filename);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-      // Progress
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log("Upload is " + progress + "% done");
-          switch (snapshot.state) {
-            case "paused":
-              console.log("Upload is paused");
-              break;
-            case "running":
-              console.log("Upload is running");
-              break;
-            default:
-              break;
-          }
-        },
-        (err) => {
-          console.log(err);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            console.log("File available at", downloadURL);
-            setForm((prev) => ({ ...prev, profilePic: downloadURL }));
-            img.src = downloadURL;
-          });
-        }
-      );
-    };
-    file && uploadFile();
+    file && uploadingImg(file);
   }, [file, img]);
 
   // Updating the profile picture
